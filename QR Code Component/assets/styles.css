@@ -1,0 +1,41 @@
+
+:root {
+    --primary: #D5E1EF;
+    --primarywhite: #FFFFFF;
+    --secondary: #68778D;
+    --secondarydark: #1F314F;
+    --secondaryblack: #000000;
+
+}
+
+* {
+    background-color: var(--primary);
+}
+
+section {
+    background-color: var(--primarywhite);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    padding: 16px;
+    
+}
+
+.headertext {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size:  20px;
+    text-align: center;
+
+}
+
+.subtext {
+    font-family: "Outfit", sans-serif;
+    font-weight: 100;
+}
