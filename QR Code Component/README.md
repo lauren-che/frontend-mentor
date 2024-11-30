@@ -1,87 +1,127 @@
-# Frontend Mentor - QR code component
+# Frontend Mentor - QR code component solution
 
-![Design preview for the QR code component coding challenge](./preview.jpg)
+This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+## Overview
 
-## The challenge
+### Screenshot
 
-Your challenge is to build out this QR code component and get it looking as close to the design as possible.
+![](./screenshot.jpg)
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
 
-## Where to find everything
+Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+### Links
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+## My process
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+### Built with
 
-## Building your project
+- Semantic HTML5 markup
+- CSS variables and custom properties
+- Absolute Positioning
+- Mobile-first workflow
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### What I learned
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+During this project, there were several key takeaways and important lessons learned that will reinforce my understanding of CSS and layout techniques. Here's a recap of the issues I encountered and the solutions, along with code samples for reference.
 
-## Deploying your project
+#### **Issue 1: Background Color Not Applying Correctly in the `section`**
 
-As mentioned above, there are many ways to host your project for free. Our recommended hosts are:
+##### Problem:
+The background color of the `section` was being overridden by the universal selector (`*`), which applied the primary background color to all elements. This was causing the card's background to be the primary color with a white border instead of completely white.
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+##### Debugging:
+I originally used the `*` selector to apply the primary color to background of the page, including the `section`, causing the section's background color to appear as the primary color instead of `primarywhite`.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+##### Solution:
+After several minutes of troubleshooting I removed the global background color rule and set the `body` background color to primary and the `section` background color to `primarywhite`.
 
-## Create a custom `README.md`
+##### Code Fix:
+```css
+/* Removed the global background color applied to all elements */
+* {
+    /* background-color: var(--primary); */
+}
+/* Applied the correct background color to the body */
+body {
+    background-color: var(--primary); 
+    font-family: "Outfit", sans-serif;
+}
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+/* Applied the correct background color to the section */
+section {
+    background-color: var(--primarywhite);
+    /* Other styles for positioning and padding remain the same */
+}
+```
+##### Key Learnings From Issue 1:
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+I have to be cautious with universal selectors (*) as they can unintentionally override other specific styles in my CSS file. I will practice targeting specific elements where possible.
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+#### Issue 2: Image Overflowing the Section
+##### Problem:
 
-## Submitting your solution
+The image inside the picture element was overflowing the boundaries of the section container.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+##### Debugging:
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+The image was not constrained within the section's width, so it stretched beyond the container, causing overflow.
 
-## Sharing your solution
+##### Solution:
 
-There are multiple places you can share your solution:
+To resolve this issue I used `width: 100%` and `height: auto` to make the image responsive, ensuring it fits within the container without distortion. Additionally, `object-fit: cover` helped me control how the image fills its container.
 
-1. Share your solution page in the **#finished-projects** channel of the [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+##### Code Fix:
+``` css
+picture img {
+    width: 100%;        /* Makes the image fill the container's width */
+    height: auto;       /* Maintains the image's aspect ratio */
+    object-fit: cover;  /* Ensures the image fills the container without distortion */
+    border-radius: 8px; /* Match the section's rounded corners */
+}
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+```
+##### Key Learning From Issue 2:
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+To prevent images from overflowing their containers, I have to ensure they're responsive by using `width: 100%`, `height: auto` and `object-fit` property which helps control how the image is scaled and positioned within its container.
 
-## Got feedback for us?
+### Continued development
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+In future projects, I want to continue refining my skills in **positioning elements on the screen**. While I’ve become more comfortable using techniques like `position: absolute` and centering elements, I still find it challenging to fully understand the nuances of positioning, especially when elements are stacked or when working with more complex layouts. I aim to become more proficient in utilizing different positioning strategies to handle layouts more effectively and responsively.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+Additionally, **determining file paths** and **image manipulation** to ensure images display correctly remains an area I want to improve. I’ve had issues with relative vs. absolute file paths and ensuring images load as expected, particularly when dealing with folder structures or server environments. I plan to focus on understanding how paths work in different contexts (local development vs. production) and continue exploring best practices for optimizing and scaling images to avoid issues with overflow or incorrect display.
 
-**Have fun building!** 🚀
+
+### Useful resources
+
+- [Selectors](https://web.dev/learn/css/selectors?continue=https%3A%2F%2Fweb.dev%2Flearn%2Fcss%2F%23article-https%3A%2F%2Fweb.dev%2Flearn%2Fcss%2Fselectors) - This helped me gain a better understanding of CSS selectors, specifically how the global background setting was overriding the body background. I realized that the global rule needed to be removed in order to allow the body and section backgrounds to apply correctly.
+- [How to auto-resize an image](https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/) - This is an amazing article which helped me finally understand how to properly auto-resize an image so that it fit into the `section` without overflowing it. I’d highly recommend it to anyone who’s still learning how to handle images effectively with CSS.
+
+## Author
+
+- Website - [Lauren Ché](https://lauren-che.github.io/)
+- Frontend Mentor - [@lauren-che](https://www.frontendmentor.io/profile/lauren-che)
