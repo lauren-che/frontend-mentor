@@ -1,41 +1,96 @@
-
 :root {
-    --primary: #D5E1EF;
-    --primarywhite: #FFFFFF;
-    --secondary: #68778D;
-    --secondarydark: #1F314F;
-    --secondaryblack: #000000;
-
+  /* Define custom CSS variables for color palette */
+  --primary: #d5e1ef; /* Light blue */
+  --primarywhite: #ffffff; /* White */
+  --secondary: #68778d; /* Grayish blue */
+  --secondarydark: #1f314f; /* Dark blue */
+  --secondaryblack: #000000; /* Black */
 }
 
-* {
-    background-color: var(--primary);
+body {
+  /* Set background color of the body using the primary color */
+  background-color: var(--primary);
+
+  /* Set the default font family for the body text */
+  font-family: 'Outfit', sans-serif;
 }
 
 section {
-    background-color: var(--primarywhite);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 320px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-    padding: 16px;
-    
+  /* Round the corners of the section */
+  border-radius: 20px;
+
+  /* Set background color of the section to white */
+  background-color: var(--primarywhite);
+
+  /* Make the section a block-level element */
+  display: block;
+
+  /* Center the section horizontally */
+  margin-left: auto;
+
+  /* Set the width of the section */
+  width: 300px;
+
+  /* Position the section absolutely relative to its nearest positioned ancestor */
+  position: absolute;
+
+  /* Place the section vertically at the middle of the viewport */
+  top: 50%;
+
+  /* Place the section horizontally at the middle of the viewport */
+  left: 50%;
+
+  /* Offset the section by half of its own width to achieve perfect centering */
+  margin-right: -50%;
+
+  /* Use transform to shift the section back up and left to fully center it */
+  transform: translate(-50%, -50%);
+
+  /* Add padding around the content inside the section */
+  padding: 16px;
 }
 
 .headertext {
-    font-family: "Outfit", sans-serif;
-    font-weight: 700;
-    font-size:  20px;
-    text-align: center;
+  /* Set the font weight of the header text to semi-bold */
+  font-weight: 600;
 
+  /* Set the font size of the header text */
+  font-size: 22px;
+
+  /* Center the header text */
+  text-align: center;
+
+  /* Add padding around the header text */
+  padding: 10px;
+
+  /* Add a subtle text shadow to the header text */
+  text-shadow: #b4b4b4 0px 1px 1px;
 }
 
 .subtext {
-    font-family: "Outfit", sans-serif;
-    font-weight: 100;
+  /* Set the font weight of the subtext to light */
+  font-weight: 200;
+
+  /* Add padding around the subtext */
+  padding: 11px;
+
+  /* Center the subtext */
+  text-align: center;
+
+  /* Set to font color of the subtext to secondary color */
+  color: var(--secondary);
+}
+
+picture img {
+  /* Set the image width to 100% of its parent container (the section) */
+  width: 100%;
+
+  /* Ensure the height adjusts proportionally to maintain the aspect ratio */
+  height: auto;
+
+  /* Make the image cover the entire area of the container without distortion */
+  object-fit: cover;
+
+  /* Apply rounded corners to the image to match the section's border-radius */
+  border-radius: 8px;
 }
