@@ -5,6 +5,7 @@
   --secondary: #68778d; /* Grayish blue */
   --secondarydark: #1f314f; /* Dark blue */
   --secondaryblack: #000000; /* Black */
+  --shadowcolor: #b4b4b4; /* Gray Shadow */
 }
 
 body {
@@ -64,7 +65,7 @@ section {
   padding: 10px;
 
   /* Add a subtle text shadow to the header text */
-  text-shadow: #b4b4b4 0px 1px 1px;
+  text-shadow: var(--shadowcolor) 0px 1px 1px;
 }
 
 .subtext {

@@ -13,23 +13,15 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
+This project is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). The goal was to create a simple, responsive QR code component that could be used to scan and navigate to a specific website. The challenge helped me practice my skills in HTML and CSS, especially in terms of responsive design and positioning.
+
+In this solution, I focused on implementing semantic HTML5 elements, using CSS variables for styling, and ensuring that the design was fully responsive. The project also allowed me to refine my knowledge of positioning techniques, image handling, and best practices for CSS layout.
 
 ### Screenshot
 
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![](images/screenshot.png)
 
 ### Links
 
@@ -40,10 +32,12 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Built with
 
-- Semantic HTML5 markup
-- CSS variables and custom properties
-- Absolute Positioning
-- Mobile-first workflow
+
+- **Semantic HTML5 Markup**: Used modern HTML5 elements like `<section>`, `<picture>`, and `<meta>` to ensure a clean, structured layout that's easy to understand and maintain.
+- **CSS Variables and Custom Properties**: Leveraged CSS variables (custom properties) to define reusable colors, improving maintainability and flexibility.
+- **Absolute Positioning**: Applied absolute positioning to elements like the `section` to control layout and center content precisely on the screen.
+- **Responsive Design**: Implemented responsive design using the `<source>` element and `srcset` and `media` for serving different image sizes based on the screen width, ensuring the page looks great on both mobile and desktop devices.
+
 
 ### What I learned
 
