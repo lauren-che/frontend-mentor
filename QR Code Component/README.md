@@ -25,8 +25,8 @@ In this solution, I focused on implementing semantic HTML5 elements, using CSS v
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL:](https://your-solution-url.com)
+- [Live Site URL:](https://your-live-site-url.com)
 
 ## My process
 
